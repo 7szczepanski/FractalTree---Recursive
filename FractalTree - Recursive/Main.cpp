@@ -57,8 +57,8 @@ void branch(vector<Line> &lines, Vector2f start_, int len_, float aL_, float aR_
 	lines.push_back(right);
 	lines.push_back(left);
 	if (len > 3) {
-		branch(lines, endL, len * 0.67, angleL + 10, -10 - angleR);
-		branch(lines, endR, len*0.67, angleL - 10, -10 + angleR);
+		branch(lines, endL, len * 0.67, angleL + 20, -20 - angleR);
+		branch(lines, endR, len*0.67, angleL - 20, -20 + angleR);
 	}
 }
 
@@ -71,7 +71,7 @@ int main()
 
 	vector<Line> lines;
 	Vector2f st(Vector2f(width / 2-220, height));
-	branch(lines, st, 250, 45, 45);
+	branch(lines, st, 300, 45, 45);
 
 	while (window.isOpen())
 	{
@@ -93,14 +93,13 @@ int main()
 
 			window.clear();
 			window.draw(background);
-			/////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 			for (int i = 0; i < lines.size(); i++) {
-				lines[i].show(window); //cout << "Bramch painted -------------------------------------\n";
+				lines[i].show(window); 
 			}
 
-			//branch(len);
-
+			
 			window.display();
 		}
 
